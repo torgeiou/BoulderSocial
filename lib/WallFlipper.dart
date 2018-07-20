@@ -97,7 +97,7 @@ class _WallFlipperState extends State<WallFlipper> with TickerProviderStateMixin
     Matrix4 projection = new Matrix4.identity()
       ..setEntry(0,0, 1/radius)
       ..setEntry(1, 1, 1/radius)
-      ..setEntry(3, 2, perspective)
+      ..setEntry(3, 2, -perspective)
       ..setEntry(2, 3, -radius)
       ..setEntry(3, 3, perspective * radius + 1.0)
       ..setEntry(1, 2, -radius)

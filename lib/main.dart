@@ -5,7 +5,7 @@ import 'package:hangtimer/WallFlipper.dart';
 import 'package:hangtimer/wall_data.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+  //SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   runApp(new MyApp());
 }
 
@@ -25,22 +25,23 @@ class MyApp extends StatelessWidget {
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
+        primaryColorBrightness: Brightness.light,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new WallSelectorPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class WallSelectorPage extends StatefulWidget {
+  WallSelectorPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _WallSelectorPageState createState() => new _WallSelectorPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _WallSelectorPageState extends State<WallSelectorPage> {
   double scrollPercent = 0.0;
 
 
@@ -53,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return new Scaffold(
+
       backgroundColor: Colors.black,
       body: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
