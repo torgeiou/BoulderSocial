@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hangtimer/LoginPage.dart';
 import 'package:hangtimer/Wall.dart';
 import 'package:hangtimer/WallFlipper.dart';
 import 'package:hangtimer/wall_data.dart';
@@ -28,6 +29,10 @@ class MyApp extends StatelessWidget {
         primaryColorBrightness: Brightness.light,
       ),
       home: new WallSelectorPage(title: 'Flutter Demo Home Page'),
+      routes: <String, WidgetBuilder> {
+        '/login': (BuildContext context) => new LoginPage(),
+      },
+      
     );
   }
 }
@@ -123,9 +128,12 @@ class BottomBar extends StatelessWidget {
           ),
           Expanded(
             child: new Center(
-              child: new Icon(
-                Icons.add,
+              child: new IconButton(
+                icon: Icon(Icons.add),
                 color: Colors.white,
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/login');
+                },
               ),
             ),
           ),
