@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         primaryColorBrightness: Brightness.light,
       ),
       home: new WallSelectorPage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/login',
       routes: <String, WidgetBuilder> {
         '/login': (BuildContext context) => new LoginPage(),
       },
@@ -132,7 +133,7 @@ class BottomBar extends StatelessWidget {
                 icon: Icon(Icons.add),
                 color: Colors.white,
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/login');
+                  // TODO: add page for adding wall
                 },
               ),
             ),

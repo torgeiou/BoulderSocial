@@ -20,7 +20,7 @@ class WallFlipper extends StatefulWidget {
   _WallFlipperState createState() => _WallFlipperState();
 }
 
-class _WallFlipperState extends State<WallFlipper> with TickerProviderStateMixin{
+class _WallFlipperState extends State<WallFlipper> with SingleTickerProviderStateMixin{
   double scrollPercent = 0.0;
   Offset startDrag;
   double startDragPercentScroll;
@@ -87,6 +87,13 @@ class _WallFlipperState extends State<WallFlipper> with TickerProviderStateMixin
       startDragPercentScroll = null;
     });
   }
+  
+  
+  void _onTap(){
+    Navigator.of(context).push(
+        new MaterialPageRoute(
+            builder: ))
+  }
 
   Matrix4 _buildWallProjection(double scrollPercent){
 
@@ -149,6 +156,7 @@ class _WallFlipperState extends State<WallFlipper> with TickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: _onTap,
       onHorizontalDragStart: _onHorizontalDragStart,
       onHorizontalDragUpdate: _onHorizontalDragUpdate,
       onHorizontalDragEnd: _onHorizontalDragEnd,
